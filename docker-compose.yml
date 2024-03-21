@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   main:
-    image: kevinfocke/sonicaria-third-party:devcontainer
+    image: ghcr.io/sonicaria/devcontainer:main
     # build:
     #   context: ..
     #   dockerfile: .devcontainer/Dockerfile
