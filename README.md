@@ -4,8 +4,8 @@ To minimize onboarding time per project, a development environment must be
 fully-ready with a single command. We use VSCode Devcontainers in combination
 with Docker images to achieve this purpose.
 
-Our devcontainer image can be found on this link:
-https://github.com/sonicaria/devcontainer
+The devcontainer image tag can be found at this link:
+https://github.com/sonicaria/devcontainer/blob/main/Makefile
 
 Instructions for sharing your git credentials:
 https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials
