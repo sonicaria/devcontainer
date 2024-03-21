@@ -105,6 +105,14 @@ cargo install exa
 echo 'Exa version:' && exa --version
 EOF
 
+# Rust | Cargo | Install Zoxide
+RUN <<EOF
+. ~/.bashrc
+cargo install zoxide --locked
+echo 'Zoxide version:' && zoxide --version
+EOF
+
+
 
 # Python | Install Python 3
 RUN <<EOF
