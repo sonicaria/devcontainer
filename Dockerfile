@@ -33,7 +33,7 @@ RUN <<EOF
 apt-get install vim -y
 EOF
 
-# Node | Install Node JS & NPM
+# Node | Install Node JS, NPM & Packages
 RUN <<EOF
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 . ~/.bashrc # source bashrc
@@ -46,6 +46,7 @@ EOF
 
 # Node | Styling Tools
 RUN <<EOF
+. ~/.bashrc # source bashrc
 npm i -g @biomejs/biome@1.5.3
 npm i -g @commitlint/cli@18.6.1
 npm i -g @commitlint/config-conventional@18.6.2
