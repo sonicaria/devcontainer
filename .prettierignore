@@ -1,0 +1,9 @@
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+# Ignore files handled by Biome
+**/*.js
+**/*.ts
+**/*.jsx
+**/*.tsx
