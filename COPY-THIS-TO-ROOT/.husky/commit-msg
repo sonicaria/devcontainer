@@ -1,0 +1,5 @@
+## START OF PRE-CONFIGURED. DO NOT CHANGE
+
+commitlint --edit ${1} --verbose
+
+## END OF PRE-CONFIGURED. DO NOT CHANGE

@@ -1,0 +1,40 @@
+{
+	"name": "devcontainer",
+	"version": "1.0.0",
+	"private": false,
+	"scripts": {
+		"build": "echo 'add build'",
+		"check:biome": "biome check .",
+		"licensecheck:cargo": "cargo bin cargo-deny --workspace check licenses",
+		"licensecheck:npm": "license-checker-rseidelsohn --excludePrivatePackages --summary --onlyAllow 'MIT; BSD-3-Clause; BSD-2-Clause; ISC; 0BSD; Apache-2.0; Python-2.0; CC-BY-4.0; BlueOak-1.0.0; CC0-1.0; Artistic-2.0; Apache 2.0; CC-BY-3.0'",
+		"onboarding": "npm ci && cargo install cargo-run-bin --target-dir ./target && cargo bin --build && npm run hooks"
+	},
+	"release": {
+		"branches": [
+			"main",
+			{
+				"name": "beta",
+				"prerelease": true
+			},
+			{
+				"name": "alpha",
+				"prerelease": true
+			}
+		]
+	},
+	"dependencies": {
+		"@biomejs/biome": "~1.5.3",
+		"@commitlint/cli": "~18.6.1",
+		"@commitlint/config-conventional": "~18.6.2",
+		"@commitlint/types": "~18.6.1",
+		"@tsconfig/strictest": "~2.0.3",
+		"@types/estree": "~1.0.5",
+		"@vitejs/plugin-vue": "~5.0.4",
+		"husky": "~9.0.11",
+		"license-checker-rseidelsohn": "~4.3.0",
+		"lint-staged": "~15.2.2",
+		"prettier": "~3.2.5",
+		"prettier-plugin-packagejson": "~2.4.12",
+		"prettier-plugin-sort-json": "~3.1.0"
+	}
+}

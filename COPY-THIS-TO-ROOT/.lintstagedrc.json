@@ -1,0 +1,6 @@
+{
+	"*.{html,css,webc,vue,json,jsonc,md}": ["prettier . --check --write"],
+	"*.{js,ts,jsx,tsx}": ["biome check . --apply"],
+  "*.toml": ["cargo-sort --workspace --grouped"],
+  "*.rs": ["cargo fmt"]
+}

@@ -44,6 +44,23 @@ echo 'node version:' && node --version
 echo 'npm version:' && npm --version
 EOF
 
+# Node | Styling Tools
+RUN <<EOF
+npm i -g @biomejs/biome@1.5.3
+npm i -g @commitlint/cli@18.6.1
+npm i -g @commitlint/config-conventional@18.6.2
+npm i -g @commitlint/types@18.6.1
+npm i -g @tsconfig/strictest@2.0.3
+npm i -g @types/estree@1.0.5
+npm i -g @vitejs/plugin-vue@5.0.4
+npm i -g husky@9.0.11
+npm i -g license-checker-rseidelsohn@4.3.0
+npm i -g lint-staged@15.2.2
+npm i -g prettier@3.2.5
+npm i -g prettier-plugin-packagejson@2.4.12
+npm i -g prettier-plugin-sort-json@3.1.0
+EOF
+
 # C | Install Clang
 RUN <<EOF
 apt-get install clang -y
@@ -113,6 +130,21 @@ apt install fzf -y
 echo 'fzf version:' && zoxide --version
 echo 'Zoxide version:' && zoxide --version
 EOF
+
+# Rust | Cargo | Style | Install Cargo Deny
+RUN <<EOF
+. ~/.bashrc
+cargo install cargo-deny
+echo 'Cargo Deny version:' && cargo-deny --version
+EOF
+
+# Rust | Cargo | Style | Install Cargo Sort
+RUN <<EOF
+. ~/.bashrc
+cargo install cargo-sort
+echo 'Cargo Sort version:' && cargo-sort --version
+EOF
+
 
 
 

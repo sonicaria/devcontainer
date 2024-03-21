@@ -1,4 +1,0 @@
-{
-	"*.{html,css,webc,vue,json,jsonc,md}": ["npm run format:prettier"],
-	"*.{js,ts,jsx,tsx}": ["npm run format:biome"]
-}
