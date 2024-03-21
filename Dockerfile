@@ -109,6 +109,8 @@ EOF
 RUN <<EOF
 . ~/.bashrc
 cargo install zoxide --locked
+apt install fzf -y
+echo 'fzf version:' && zoxide --version
 echo 'Zoxide version:' && zoxide --version
 EOF
 
