@@ -44,7 +44,7 @@ echo 'node version:' && node --version
 echo 'npm version:' && npm --version
 EOF
 
-# Node | Styling Tools
+# Node | CI Tools
 RUN <<EOF
 . ~/.bashrc # source bashrc
 npm i -g @biomejs/biome@1.5.3
@@ -60,6 +60,7 @@ npm i -g lint-staged@15.2.2
 npm i -g prettier@3.2.5
 npm i -g prettier-plugin-packagejson@2.4.12
 npm i -g prettier-plugin-sort-json@3.1.0
+npm i -g meta
 EOF
 
 # C | Install Clang

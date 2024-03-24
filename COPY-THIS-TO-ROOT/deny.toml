@@ -1,61 +1,61 @@
 # Used by Cargo deny
 [graph]
 # cargo-deny is really only ever intended to run on the "normal" tier-1 targets
-targets = [
-  "x86_64-unknown-linux-gnu",
-  "aarch64-unknown-linux-gnu",
-  "x86_64-unknown-linux-musl",
-  "aarch64-apple-darwin",
-  "x86_64-apple-darwin",
-  "x86_64-pc-windows-msvc",
-]
 all-features = true
+targets = [
+    "x86_64-unknown-linux-gnu",
+    "aarch64-unknown-linux-gnu",
+    "x86_64-unknown-linux-musl",
+    "aarch64-apple-darwin",
+    "x86_64-apple-darwin",
+    "x86_64-pc-windows-msvc",
+]
 
 [bans]
-multiple-versions = "deny"
-wildcards = 'deny'
 deny = [
-  { crate = "git2", use-instead = "gix" },
-  { crate = "openssl", use-instead = "rustls" },
-  { crate = "openssl-sys", use-instead = "rustls" },
-  "libssh2-sys",
-  { crate = "cmake", use-instead = "cc" },
-  { crate = "windows", reason = "bloated and unnecessary", use-instead = "ideally inline bindings, practically, windows-sys" },
+    { crate = "git2", use-instead = "gix" },
+    { crate = "openssl", use-instead = "rustls" },
+    { crate = "openssl-sys", use-instead = "rustls" },
+    "libssh2-sys",
+    { crate = "cmake", use-instead = "cc" },
+    { crate = "windows", reason = "bloated and unnecessary", use-instead = "ideally inline bindings, practically, windows-sys" },
 ]
+multiple-versions = "deny"
 skip = [
-  { crate = "bitflags@1.3.2", reason = "https://github.com/seanmonstar/reqwest/pull/2130 should be in the next version" },
+    { crate = "bitflags@1.3.2", reason = "https://github.com/seanmonstar/reqwest/pull/2130 should be in the next version" },
 ]
 skip-tree = [
-  { crate = "windows-sys@0.48.0", reason = "a foundational crate for many that bumps far too frequently to ever have a shared version" },
+    { crate = "windows-sys@0.48.0", reason = "a foundational crate for many that bumps far too frequently to ever have a shared version" },
 ]
+wildcards = 'deny'
 
 [sources]
-unknown-registry = "deny"
 unknown-git = "deny"
+unknown-registry = "deny"
 
 [licenses]
-version = 2
-include-dev = true
-unused-allowed-license = "allow"
 allow = [
-  "Apache-2.0",
-  "Apache-2.0 WITH LLVM-exception",
-  "MIT",
-  "MPL-2.0",
-  "BSD-3-Clause",
-  "ISC",
-  "BSD-2-Clause",
-  "0BSD",
-  "Python-2.0",
-  "CC-BY-4.0",
-  "BlueOak-1.0.0",
-  "CC0-1.0",
-  "Artistic-2.0",
-  "CC-BY-3.0",
-  # "Unicode-DFS-2016",
+    "Apache-2.0",
+    "Apache-2.0 WITH LLVM-exception",
+    "MIT",
+    "MPL-2.0",
+    "BSD-3-Clause",
+    "ISC",
+    "BSD-2-Clause",
+    "0BSD",
+    "Python-2.0",
+    "CC-BY-4.0",
+    "BlueOak-1.0.0",
+    "CC0-1.0",
+    "Artistic-2.0",
+    "CC-BY-3.0",
+    # "Unicode-DFS-2016",
 ] # Sync with npm license checker
 confidence-threshold = 0.93
+include-dev = true
 private = { ignore = true }
+unused-allowed-license = "allow"
+version = 2
 # We want really high confidence when inferring licenses from text
 
 exceptions = [{ allow = ["Unicode-DFS-2016"], crate = "unicode-ident" }]

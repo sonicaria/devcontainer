@@ -1,0 +1,26 @@
+{
+	"name": "devcontainer",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"hooks": "husky",
+		"onboarding": "npm i && npm run hooks"
+	},
+	"release": {
+		"branches": [
+			"main",
+			{
+				"name": "beta",
+				"prerelease": true
+			},
+			{
+				"name": "alpha",
+				"prerelease": true
+			}
+		]
+	},
+	"dependencies": {
+		"prettier-plugin-packagejson": "2.4.12",
+		"prettier-plugin-sort-json": "3.1.0"
+	}
+}
