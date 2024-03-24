@@ -60,7 +60,7 @@ npm i -g lint-staged@15.2.2
 npm i -g prettier@3.2.5
 npm i -g prettier-plugin-packagejson@2.4.12
 npm i -g prettier-plugin-sort-json@3.1.0
-npm i -g meta
+npm i -g meta@2.2.25
 EOF
 
 # C | Install Clang
