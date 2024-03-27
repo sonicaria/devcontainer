@@ -1,0 +1,5 @@
+## START OF PRE-CONFIGURED. DO NOT CHANGE
+
+lint-staged --concurrent false
+
+## END OF PRE-CONFIGURED. DO NOT CHANGE

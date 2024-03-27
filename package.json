@@ -1,7 +1,7 @@
 {
 	"name": "devcontainer",
 	"version": "1.0.0",
-	"private": false,
+	"private": true,
 	"scripts": {
 		"build": "echo 'add build'",
 		"check:biome": "biome check .",

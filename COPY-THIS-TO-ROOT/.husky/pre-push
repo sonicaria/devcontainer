@@ -1,0 +1,14 @@
+## START OF PRE-CONFIGURED. DO NOT CHANGE
+
+echo 'Pulling to avoid merge conflicts'
+git pull
+echo 'Installing latest packages in case changed'
+npm i
+echo 'Running license check NPM'
+license-checker-rseidelsohn --excludePrivatePackages --summary --onlyAllow 'MIT; BSD-3-Clause; BSD-2-Clause; ISC; 0BSD; Apache-2.0; Python-2.0; CC-BY-4.0; BlueOak-1.0.0; CC0-1.0; Artistic-2.0; Apache 2.0; CC-BY-3.0'
+echo 'Running license check Cargo'
+cargo-deny --workspace check licenses
+
+## END OF PRE-CONFIGURED. DO NOT CHANGE
+
+## Your custom checks here
