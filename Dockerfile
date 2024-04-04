@@ -87,28 +87,28 @@ RUN update-alternatives --install /usr/bin/ld ld /usr/local/bin/mold 100 && rm m
 # Rust | Cargo | Install Cargo Watch
 RUN <<EOF
 . ~/.bashrc
-cargo install cargo-watch
+cargo install cargo-watch@8.5.2
 echo 'cargo-watch version:' && cargo-watch --version
 EOF
 
 # Rust | Cargo | Install Ripgrep CLI
 RUN <<EOF
 . ~/.bashrc
-cargo install ripgrep
+cargo install ripgrep@14.1.0
 echo 'ripgrep version:' && rg --version
 EOF
 
 # Rust | Cargo | Install Exa
 RUN <<EOF
 . ~/.bashrc
-cargo install exa
+cargo install exa@0.10.1
 echo 'Exa version:' && exa --version
 EOF
 
 # Rust | Cargo | Install Zoxide
 RUN <<EOF
 . ~/.bashrc
-cargo install zoxide --locked
+cargo install zoxide@0.9.4
 apt install fzf -y
 echo 'fzf version:' && zoxide --version
 echo 'Zoxide version:' && zoxide --version
@@ -117,8 +117,8 @@ EOF
 # Rust | Cargo | Style | Install Cargo binstall
 RUN <<EOF
 . ~/.bashrc
-cargo install cargo-binstall
-echo 'Cargo Deny version:' && cargo-binstall --version
+cargo install cargo-binstall@1.6.4
+echo 'Cargo binstall installed?' && cargo-binstall@1.6.4 --help
 EOF
 
 # Python | Install Python 3
