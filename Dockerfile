@@ -44,25 +44,6 @@ echo 'node version:' && node --version
 echo 'npm version:' && npm --version
 EOF
 
-# Node | CI Tools
-RUN <<EOF
-. ~/.bashrc # source bashrc
-npm i -g @biomejs/biome@1.5.3
-npm i -g @commitlint/cli@18.6.1
-npm i -g @commitlint/config-conventional@18.6.2
-npm i -g @commitlint/types@18.6.1
-npm i -g @tsconfig/strictest@2.0.3
-npm i -g @types/estree@1.0.5
-npm i -g @vitejs/plugin-vue@5.0.4
-npm i -g husky@9.0.11
-npm i -g license-checker-rseidelsohn@4.3.0
-npm i -g lint-staged@15.2.2
-npm i -g prettier@3.2.5
-npm i -g prettier-plugin-packagejson@2.4.12
-npm i -g prettier-plugin-sort-json@3.1.0
-npm i -g meta@2.2.25
-EOF
-
 # C | Install Clang
 RUN <<EOF
 apt-get install clang -y
@@ -93,7 +74,7 @@ RUN <<EOF
     git clone https://github.com/rui314/mold.git
     mkdir mold/build
     cd mold/build
-    git checkout stable
+    git checkout v2.30.0
     ../install-build-deps.sh
     cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=c++ ..
     cmake --build . -j $(nproc)
@@ -146,9 +127,6 @@ RUN <<EOF
 cargo install cargo-sort
 echo 'Cargo Sort version:' && cargo-sort --version
 EOF
-
-
-
 
 # Python | Install Python 3
 RUN <<EOF
