@@ -79,6 +79,7 @@ RUN <<EOF
     cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=c++ ..
     cmake --build . -j $(nproc)
     cmake --build . --target install
+    cd ../.. && rm mold -rf
 EOF
 
 # Set Mold as linker instead of ld by setting symbolic link & remove build folder
