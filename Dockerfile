@@ -114,18 +114,11 @@ echo 'fzf version:' && zoxide --version
 echo 'Zoxide version:' && zoxide --version
 EOF
 
-# Rust | Cargo | Style | Install Cargo Deny
+# Rust | Cargo | Style | Install Cargo binstall
 RUN <<EOF
 . ~/.bashrc
-cargo install cargo-deny
-echo 'Cargo Deny version:' && cargo-deny --version
-EOF
-
-# Rust | Cargo | Style | Install Cargo Sort
-RUN <<EOF
-. ~/.bashrc
-cargo install cargo-sort
-echo 'Cargo Sort version:' && cargo-sort --version
+cargo install cargo-binstall
+echo 'Cargo Deny version:' && cargo-binstall --version
 EOF
 
 # Python | Install Python 3
