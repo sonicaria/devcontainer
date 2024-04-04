@@ -118,7 +118,7 @@ EOF
 RUN <<EOF
 . ~/.bashrc
 cargo install cargo-binstall@1.6.4
-echo 'Cargo binstall installed?' && cargo-binstall@1.6.4 --help
+echo 'Cargo binstall installed?' && cargo-binstall --help
 EOF
 
 # Python | Install Python 3
