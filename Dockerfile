@@ -56,7 +56,7 @@ apt-get install cmake -y
 echo 'cmake version:' && cmake --version
 EOF
 
-# Rust | Install Rust
+# Rust | Install Rust. Must be above version 1.77.2: https://github.com/rust-lang/rust/security/advisories/GHSA-q455-m56c-85mh
 RUN <<EOF
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 . $HOME/.cargo/env >> ~/.bashrc # source cargo PATH
